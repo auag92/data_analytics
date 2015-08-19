@@ -1,0 +1,177 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%\usepackage[top=3cm,bottom=3cm,left=2cm,right=2cm,headsep=10pt,a4paper]{geometry} % Page margins
+\usepackage[top=3cm,bottom=3cm,left=2cm,right=2cm,headsep=10pt,paperwidth=6in, paperheight=9in]{geometry} % Page margins
+
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor,colortbl} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+\definecolor{TGray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the SymÅ¬Å≠bol, Chancery and ComÅ¬Å≠puter Modern fonts
+\usepackage[mathcal]{euscript}
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{url}
+
+% Bibliography
+%\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\usepackage[sorting=none,backend=biber,autocite = superscript]{biblatex}
+\addbibresource{ClinicalAnecdotes.bib}
+
+% Index
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage[figuresright]{rotating}
+\usepackage{graphicx}
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+\newcommand{\myfig}[5]{\begin{figure}[#4]\begin{center}\includegraphics[scale=0.6]{#5/#1}\caption{#2}\label{#3}\end{center}\end{figure}}
+%\newcommand{\myfig}[5]{\begin{figure}[#4]\begin{center}\includegraphics{#5/#1}\caption{#2}\label{#3}\end{center}\end{figure}}
+\newcommand{\myfigL}[4]{\clearpage\begin{sidewaysfigure}[h]\begin{center}\includegraphics[width=\textwidth]{#4/#1}\caption{#2}\label{#3}\end{center}\end{sidewaysfigure}\clearpage}
+\newcommand\T{\rule{0pt}{2.6ex}} 
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+\newcommand\junk[1]{}
+\makeatletter
+\renewcommand{\@chapapp}{Module}
+\makeatother
+
+\frontmatter
+
+\junk{
+%Title
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{cover4.png}}} % Image background
+\centering
+\vspace*{-0.5cm}
+\par\normalfont\fontsize{50}{7em}\sffamily\selectfont
+\par{\color{Maroon} { GENOMIC}}\par \hspace*{-0.5cm} \fontsize{40}{1em}\selectfont{\color{Bittersweet} {IMPERFECTIONS}} \par % Book title
+\vspace*{1cm}
+{\Huge {\color{Gray} Ramesh Hariharan}}\par % Author name
+%\vspace*{9.0cm}
+%\hspace*{1.5cm}
+%\DeclareFixedFont{\PTsmallest}{T1}{ppl}{b}{it}{0.3in}
+%{\PTsmallest \color{Gray}{Strand Life Sciences}}
+\endgroup
+}
+
+
+
+
+%only if cover page is needed
+\begin{titlepage}
+\begingroup
+\mbox{} % important to flush subsequent contents to a new page
+\thispagestyle{empty}
+\vfill
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{dataanalytics-cover.png}}} % Image background
+\centering
+\par\normalfont\fontsize{50}{7em}\sffamily\selectfont
+\par{\color{Bittersweet} { DATA ANALYTICS}}\par \hspace*{-0.5cm} \fontsize{20}{1em}\selectfont{\color{Maroon} {AUG 2015, IISc.}} \par % Book title
+\vspace*{1cm}
+{\Huge {\color{Gray} Ramesh Hariharan \\ Rajesh Sundaresan}}\par % Author name
+\vfill
+\endgroup
+\end{titlepage}
+\newpage
+~\vfill
+\thispagestyle{empty}
+{}
+\newpage
+
+
+%Main contents
+\vspace*{40 pt}
+{\centering\Large\em 
+Aug-Dec 2015 \par
+}
+%{\centering\Large\em
+%In Nature's playground\\Characters jog around\\Playing hide-and-seek\\In all innocent fun\\But every so often\\A fight breaks out...\par 
+%}
+
+~\vfill
+\thispagestyle{empty}
+{\centering
+\noindent Copyright \copyright\ 2015 IISc.\\ % Copyright notice
+%\noindent \textsc{Published by Strand Life Sciences}\\ % Publisher
+%\noindent \textsc{www.strandls.com}\\ % URL
+%\noindent \textit{Pre-Publication Edition, May 2015}\\ % Printing/edition date
+%\noindent \textit{All Rights Reserved}\par % Printing/edition date
+}
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+{}
+\newpage
+
+\mainmatter
+
+%TOC
+\chapterimage{dataanalytics-chapter.png} % Chapter heading image
+\pagestyle{empty} % No headers
+%\tableofcontents % Print the table of contents itself
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+\pagestyle{fancy} % Print headers again
+
+%\input{preface.tex}
+%\input{BookSubmission.tex}
+%\input{War-Room.tex}
+%\addcontentsline{toc}{chapter}{Preface}
+%\input{ack.tex}
+%\addcontentsline{toc}{chapter}{Acknowledgements}
+
+\tableofcontents % Print the table of contents itself
+
+%TOC
+\chapterimage{dataanalytics-chapter.png} % Chapter heading image
+\input{kepler.tex}
+
+
+%\backmatter
+\renewcommand\bibname{{REFERENCES}} %  will print "REFERENCES" instead of "BIBLIOGRAPHY"
+\addcontentsline{toc}{chapter}{REFERENCES} %  adds "REFERENCES" to the table of content
+\printbibliography
+
+\junk{
+%only if cover page is needed
+\newpage
+~\vfill
+\thispagestyle{empty}
+{}
+\newpage
+%cover page 
+\begingroup
+\mbox{} % important to flush subsequent contents to a new page
+\thispagestyle{empty}
+\vfill
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{backcover.pdf}}} % Image background
+\centering
+\vfill
+\endgroup
+}
+
+\end{document}
