@@ -1,5 +1,5 @@
 gnuplot> f(x) = -x + r;
-gnuplot> fit f(x) "x2y2.dat" us 1:2 via r
+gnuplot> fit f(x) "script1.dat" us 1:2 via r
 
 Iteration 0
 WSSR        : 11.9567           delta(WSSR)/WSSR   : 0

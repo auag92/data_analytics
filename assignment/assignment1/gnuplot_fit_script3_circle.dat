@@ -1,0 +1,51 @@
+gnuplot> g(x,y) = -x + -y + r
+gnuplot> fit g(x,y) 'script3.dat' us 1:2:3:(1) via r
+
+
+ Iteration 0
+ WSSR        : 0.675476          delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1
+
+initial set of free parameter values
+
+r               = 2.50216
+/
+
+ Iteration 1
+ WSSR        : 0.675441          delta(WSSR)/WSSR   : -5.17535e-05
+ delta(WSSR) : -3.49564e-05      limit for stopping : 1e-05
+ lambda	  : 0.1
+
+resultant parameter values
+
+r               = 2.5044
+/
+
+ Iteration 2
+ WSSR        : 0.67544           delta(WSSR)/WSSR   : -1.47867e-06
+ delta(WSSR) : -9.9875e-07       limit for stopping : 1e-05
+ lambda	  : 0.01
+
+resultant parameter values
+
+r               = 2.50484
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 0.67544
+rel. change during last iteration : -1.47867e-06
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.410926
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16886
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+r               = 2.50484          +/- 0.1838       (7.337%)
+
+
+correlation matrix of the fit parameters:
+
+               r
+r               1.000 

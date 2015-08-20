@@ -1,0 +1,7 @@
+The Assignment has been solved primarily in octave.
+
+However, the least square fits(using levenberg algorith) were carried out in
+gnuplot using the 'fit' command.
+
+As such, datafiles were generated (script$.dat) and the gnuplot instructions and
+results re reported in the gnuplot_fit_script$.dat files.
