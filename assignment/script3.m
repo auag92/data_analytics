@@ -2,7 +2,6 @@
 % Data from literature
 % r_mars =  1.529; % radius of mars
 % delta   = 1.85;  % declination of martian orbit w.r.t ecliptic
-
 %-------------------------------------------------------------------------------
 data_tri = importdata('01_data_mars_triangulation.csv',',',1);
 % theta => heliocentric longitude of earth
@@ -65,12 +64,15 @@ fclose(fid);
 %
 % r               = 2.50484          +/- 0.1838       (7.337%)
 
-% display("radius of martian orbit calculated assuming orbit is a circle");
+display("radius of martian orbit calculated assuming orbit is a circle");
 radius_sqr = 2.50484;
 radius = sqrt(radius_sqr)
 error  = sqrt(0.1838)
 
-%%----------------------------------------------------------------------------%%
+%%--------------------------for plotting the martian orbit--------------------------------------------------%%
+
+%% recalculating the coordinates in terms of theta and phi following the same
+%% procedure as in solution to the problem 2 and then scaling by radius as determined in presently
 data_opp = importdata('01_data_mars_opposition.csv',',',1);
 len = 12;
 
@@ -143,10 +145,10 @@ function [x, y, z] = circle3d(center, normal, radius)
   z = ret(:, 3);
 endfunction
 
-
 [X,Y,Z] = circle3d([0 0 0], [a b 1], radius);
 
 hold on
 plot3(X,Y,Z);
-plot3 (pos(1,:), pos(2,:), pos(3,:),'red','*');
+% plot3 (pos(1,:), pos(2,:), pos(3,:));
+plot3 (pos(:,1), pos(:,2), pos(:,3),'+','markersize',15);
 hold off

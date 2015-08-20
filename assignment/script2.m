@@ -30,6 +30,10 @@ c_theta = cosd(theta);
 s_phi   = sind(phi);
 c_phi   = cosd(phi);
 
+% the positions on the heliocentric celstial sphere were calculated as follows
+% x = cos(phi)*cos(theta)
+% y = cos(phi)*sin(theta)
+% z = sin(phi)
 pos = zeros(len,3);
 for i = 1:len
   pos(i,1) = c_phi(i)*c_theta(i);
