@@ -1,0 +1,60 @@
+gnuplot> f(x) = -x + r;
+gnuplot> fit f(x) "x2y2.dat" us 1:2 via r
+
+Iteration 0
+WSSR        : 11.9567           delta(WSSR)/WSSR   : 0
+delta(WSSR) : 0                 limit for stopping : 1e-05
+lambda	  : 1
+
+initial set of free parameter values
+
+r               = 1
+/
+
+Iteration 1
+WSSR        : 0.987674          delta(WSSR)/WSSR   : -11.1059
+delta(WSSR) : -10.9691          limit for stopping : 1e-05
+lambda	  : 0.1
+
+resultant parameter values
+
+r               = 2.2518
+/
+
+Iteration 2
+WSSR        : 0.674274          delta(WSSR)/WSSR   : -0.464797
+delta(WSSR) : -0.3134           limit for stopping : 1e-05
+lambda	  : 0.01
+
+resultant parameter values
+
+r               = 2.50166
+/
+
+Iteration 3
+WSSR        : 0.674273          delta(WSSR)/WSSR   : -1.85178e-06
+delta(WSSR) : -1.24861e-06      limit for stopping : 1e-05
+lambda	  : 0.001
+
+resultant parameter values
+
+r               = 2.50216
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 0.674273
+rel. change during last iteration : -1.85178e-06
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.410571
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.168568
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+r               = 2.50216          +/- 0.1836       (7.338%)
+
+
+correlation matrix of the fit parameters:
+
+               r
+r               1.000

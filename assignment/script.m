@@ -35,10 +35,29 @@ end
 x_sqr = x_mars .^2;
 y_sqr = y_mars .^2;
 
-sum     = x_sqr + y_sqr;
-radius  = sqrt(sum);
+radius2     = x_sqr + y_sqr;
+radius  = sqrt(radius2);
 
+% heliocentric angular location of mars
 theta_mars = zeros(5,1);
 for i = 1:5
   theta_mars(i,1) = atand(y_mars(i,1)/x_mars(i,1));
 end
+
+
+% Determined least square fit for Y^2 = -X^2 + R^2 using the fit command
+% in gnuplot
+% Final set of parameters            Asymptotic Standard Error
+% =======================            ==========================
+%
+% r               = 2.50216          +/- 0.1836       (7.338%)
+% here r is the square of the mars-sun distance in AU
+
+radius_sqr = 2.50216;
+display('the radius of mars in a helio-centric circular orbit in the ecliptic plane')
+radius_mars = sqrt(radius_sqr)
+error       = sqrt(0.1836)
+
+% the distance between mars and earth based on  --
+% helio centric circular orbit located in the ecliptic --
+% is 1.5818 +- 0.42849
