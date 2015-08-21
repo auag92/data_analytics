@@ -1,7 +1,43 @@
 The Assignment has been solved primarily in octave.
 
-However, the least square fits(using levenberg algorith) were carried out in
-gnuplot using the 'fit' command.
+However, the least square fits(using the Levenberg algorithm) were carried out in
+Gnuplot using the 'fit' command.
 
 As such, datafiles were generated (script$.dat) and the gnuplot instructions and
-results re reported in the gnuplot_fit_script$.dat files.
+results were reported in the gnuplot_fit_script$.dat files.
+
+script1:  solution to the first problem
+
+    x and y coordinates of mars in a heliocentric cartesian coordiate system were
+    calculated and squares of coordinates were exported to datafile.
+
+    function optimised:-> y^2 = -x^2 +r^2
+    w.r.t parameter r
+    gnuplot> f(x) = -x + r;
+    gnuplot> fit f(x) "script1.dat" us 1:2 via r
+
+    The resultant value of r is displayed on the running the script along with the
+    error.
+
+script2:  solution to the second problem
+
+    theta : zodiac independant heliocentric longitude of Mars/ Earth determined as
+          theta  = (zodiac_index - 1)*30 + angle(from data file)
+    phi   : the heliocentric latitude of mars calculated using radius determined in previous problem.
+
+    Normal vector to a hypothetical orbital plane is define as n = (a,b,1) and the function
+     (n<dot>r) is minimised where is 'r' is the position vector of Mars of on the celestial sphere.
+    Having determined a and b using regression on the above relation, the angle of declination is determined as
+    arc_cosine of the dot product of unit vector along plane normal and the z axis.
+
+script3:  solution to the third problem
+
+    the code from solution 1 was used to generate x and y coordinates of Mars. The z coordinate was
+    determined from these x and y values using the normal to martial orbital plane (a,b,1) as determined in
+    solution 2.
+
+    Based on these 5 coordinates a regression on equation: z^2 = -x^2 - y^2 + r^2 was carried out in gnuplot to determine r
+    for a heliocentric circular orbit inclined w.r.t the ecliptic.
+
+    3dcricle function was used to generate a circle in space in plane (ax + by + z = 0) and the coordinates of the 12 martian sightings
+    were scatter plotted over it.

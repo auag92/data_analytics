@@ -32,7 +32,7 @@ for i = 1:5
   y_mars(i,1)    = m(indx)*x_mars(i,1) + sin_theta(indx) - (m(indx)*cos_theta(indx));
 end
 %-------------------------------------------------------------------------------
-
+% Calculating position along z coordinate using parameters dtermined in solution 2
 a               = 0.0162388;
 b               = -0.0534152;
 for i = 1:5
@@ -53,7 +53,7 @@ for i=1:size(pos, 1)
     fprintf(fid, '\n');
 end
 fclose(fid);
-
+%-------------------regression analysis based on these five coordinates---------
 % On fitting using an implementation of Marquardt-Levenberg algorithm (fit command)
 % in gnuplot following values of parameters r which corresponds to the square of
 % the radius were determined.

@@ -1,7 +1,7 @@
 %-------------opposition data analysis -----------------------------------------
 data_opp = importdata('01_data_mars_opposition.csv',',',1);
 
-len = 12;
+len = 12; % no. of data points
 
 theta       = zeros(len,1);
 geo_phi     = zeros(len,1);
@@ -11,7 +11,7 @@ for i = 1:len
   geo_phi(i)   = data_opp.data(i,8) + (data_opp.data(i,9)/60);
 end
 
-r_mars = 1.5818;
+r_mars = 1.5818; % from previous problem
 
 for i = 1:len
   phi(i) = geo_phi(i)/r_mars;
@@ -41,7 +41,7 @@ for i = 1:len
   pos(i,3) = s_phi(i);
 end
 
-fid = fopen('xyz.dat', 'w+');
+fid = fopen('script2.dat', 'w+');
 for i=1:size(pos, 1)
     fprintf(fid, '%f ', pos(i,:));
     fprintf(fid, '\n');

@@ -44,7 +44,17 @@ for i = 1:5
   theta_mars(i,1) = atand(y_mars(i,1)/x_mars(i,1));
 end
 
-
+pos = zeros(5,2);
+for i=1:size(pos, 1)
+  pos(i,1) = x_sqr(i);
+  pos(i,2) = y_sqr(i);
+end
+fid = fopen('script2.dat', 'w+');
+for i=1:size(pos, 1)
+    fprintf(fid, '%f ', pos(i,:));
+    fprintf(fid, '\n');
+end
+fclose(fid);
 % Determined least square fit for Y^2 = -X^2 + R^2 using the fit command
 % in gnuplot
 % Final set of parameters            Asymptotic Standard Error
